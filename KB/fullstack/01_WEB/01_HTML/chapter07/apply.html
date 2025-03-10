@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link
+      rel="stylesheet"
+      href="./apply.css
+    " />
+  </head>
+  <body>
+    <section class="apply">
+      <h1>지원 여부 확인</h1>
+
+      <div class="notice">
+        <p>
+          ✔️ 지원분야와 E-mail, 비밀번호를 입력하시면 지원여부를 조회하실 수
+          있으며, 입사지원서를 수정/확인 하실 수 있습니다.
+        </p>
+        <p>
+          ✔️ 입사지원서 접수 마감 이후에는 입사지원서의 조회 및 수정이
+          불가능합니다.
+        </p>
+        <p>
+          ✔️ 비밀번호는 영문 대소문자를 구분합니다. 이 점에 유의하시기 바랍니다.
+        </p>
+      </div>
+
+      <div class="form-container">
+        <div class="form-group">
+          <div class="title">
+            <span style="color: rgb(255, 90, 30); font-weight: 700">*</span>
+            <span>지원공고</span>
+          </div>
+          <select name="annc" class="annc">
+            <option value="" selected hidden></option>
+            <option value="1">
+              KB국민은행 '25년 상반기 퇴직직원 재채용(IT구매검토 지원 부문)
+            </option>
+            <option value="2">
+              2025년 KB국민은행 [스마트 어드바이저] 상시모집
+            </option>
+            <option value="3">
+              [강북지역영업그룹] 영업점 창구 텔러 파트타이머 인재 Pool 상시 등록
+            </option>
+            <option value="4">
+              KB국민은행 인천국제공항 환전전문매니저 상시모집
+            </option>
+            <option value="5">
+              KB국민은행 '25년 1분기 [스마트 어드바이저] 채용대상점 근무직원
+              모집
+            </option>
+          </select>
+        </div>
+
+        <div class="email">
+          <div class="title">
+            <span style="color: rgb(255, 90, 30); font-weight: 700">*</span>
+            <span>이메일</span>
+          </div>
+          <input type="email" id="email" />
+        </div>
+
+        <div class="password">
+          <div class="title">
+            <span style="color: rgb(255, 90, 30); font-weight: 700">*</span>
+            <span>비밀번호</span>
+          </div>
+          <input type="password" id="password" />
+        </div>
+      </div>
+
+      <button>지원 내역 확인하기 ➡️</button>
+    </section>
+  </body>
+</html>
