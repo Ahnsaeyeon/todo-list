@@ -1,20 +1,22 @@
-# - 플로우 차트
+# 할 일 관리 웹앱 - 플로우 차트
+
+다음은 할 일 관리 웹앱의 기능 흐름을 보여주는 Mermaid.js 플로우 차트입니다.
 
 ```mermaid
 graph TD;
-    A[페이지 로드] --> B[저장된 데이터 로드];
-    B --> C[현재 날짜 출력];
-    C --> D[사용자 입력 대기];
+    A[Page Load] --> B[Load Saved Data];
+    B --> C[Display Current Date];
+    C --> D[Wait for User Input];
 
-    D -->|할 일 추가| E[새로운 아이템 생성 및 저장];
-    E --> F{마감일 확인 (오늘인지?)};
+    D -->|Add Task| E[Create and Save New Item];
+    E --> F{"Check Deadline (Is it today?)"};
 
-    F -- 아니요 --> G[완료/삭제 대기];
-    F -- 예 --> H[마감일 강조 표시] --> G;
+    F -- No --> G[Wait for Completion or Deletion];
+    F -- Yes --> H[Highlight as Urgent] --> G;
 
-    G -->|완료 버튼 클릭| I[완료 상태 토글];
-    G -->|삭제 버튼 클릭| J[아이템 삭제];
+    G -->|Click Check Button| I[Toggle Completion Status];
+    G -->|Click Delete Button| J[Remove Item];
 
-    I --> K[로컬 스토리지 데이터 저장];
+    I --> K[Save to Local Storage];
     J --> K;
 ```
