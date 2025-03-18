@@ -12,7 +12,7 @@ const date = new Date();
 const year = date.getFullYear();
 const month = date.getMonth();
 const day = date.getDate();
-const week = date.getDay();
+const week = date.getDay() - 1;
 
 function printMonth(month) {
   const monthNames = [
