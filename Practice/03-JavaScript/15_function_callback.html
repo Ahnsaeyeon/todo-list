@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15_function_callback</title>
+    <script>
+      function f(callback, num) {
+        for (let i = 0; i < num; i++) {
+          callback();
+        }
+      }
+
+      function callback() {
+        console.log("함수 호출");
+      }
+
+      f(callback, 3);
+    </script>
+  </head>
+  <body>
+    <h1>15_function_callback</h1>
+  </body>
+</html>

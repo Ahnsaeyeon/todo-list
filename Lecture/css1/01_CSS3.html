@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_CSS</title>
+    <style>
+      .test1 ol li:first-child {
+        background-color: lightgray;
+      }
+
+      .test1 ol li:hover {
+        background-color: rgb(195, 240, 255);
+        transition: 0.3s;
+      }
+
+      .test1 ol li:active {
+        background-color: rgb(0, 116, 193);
+        transition: 0.3s;
+      }
+    </style>
+    <!-- ul 하위의 모든 요소들에 css 처리 -->
+  </head>
+  <body>
+    <ul class="test1">
+      <li>
+        <!-- ul과 li의 관계는 직계 자식 -->
+        <a href="#">test1</a>
+        <ol>
+          <li><a href="#">test1-1</a></li>
+          <li><a href="#">test1-2</a></li>
+          <li><a href="#">test1-3</a></li>
+        </ol>
+      </li>
+
+      <li><a href="#">test2</a></li>
+      <li><a href="#">test3</a></li>
+    </ul>
+
+    <div data-name="kim"></div>
+  </body>
+</html>

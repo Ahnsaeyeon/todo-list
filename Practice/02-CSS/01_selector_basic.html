@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: red;
+        background-color: yellow;
+        text-align: center;
+      }
+
+      div {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    Cascading Style Sheet
+    - HTML 문서의 스타일을 정의하는 시트 언어
+    
+    1. 외부 스타일 시트
+    - 별도의 CSS을 생성하여 HTMK 문서와 연결
+    - 유지 보수 하기 쉬움
+
+    2. 내부 스타일 시트
+    - HRML 문서의 gead 태그 내에 style 태그를 사용하여 스타일을 정의
+
+    3. 인라인 스타일
+    - HTML 태그 내에 style 속성을 사용하여 스타일을 정의
+    -->
+
+    <!-- 
+    선택자 우선순위
+     1. !important 가장 높은 우선순위 
+     2. 인라인 스타일
+     3. 아이디 선택자
+     4. 클래스 선택자
+     5. 태그 선택자
+     6. 전체 선택자
+
+     => 동일한 우선순위일 경우에는 나중에 선언된 스타일이 적용된다
+     -->
+    <div>
+      <h1>CSS3 선택자 기본</h1>
+      <h2>우선순위 테스트</h2>
+    </div>
+  </body>
+</html>

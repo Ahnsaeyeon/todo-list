@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_CSS</title>
+    <style>
+      .test1 * {
+        border: 1px solid lightgray;
+        padding: 0.25rem;
+      }
+      ul#sample1.test1 {
+        border: 1px solid red;
+      }
+    </style>
+    <!-- ul 하위의 모든 요소들에 css 처리 -->
+  </head>
+  <body>
+    <h1 style="color: red">01_CSS</h1>
+    <h2 id="sample">test</h2>
+
+    <h2 id="sample2">test</h2>
+
+    <ul id="sample1" class="test1">
+      <li><a href="#">test111</a></li>
+      <li><a href="#">test111</a></li>
+      <li><a href="#">test111</a></li>
+      <li><a href="#">test111</a></li>
+    </ul>
+
+    <div data-name="kim"></div>
+  </body>
+</html>

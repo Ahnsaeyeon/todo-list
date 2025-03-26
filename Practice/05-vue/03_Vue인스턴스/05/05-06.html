@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05-06</title>
+  </head>
+  <body>
+    <div id="app">
+      <button :style="computedStyle" @mouseover="changeBackground">
+        테스트
+      </button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript">
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+          let isHover = false;
+
+          computed: {
+            const computedStyle = () => {
+              isHover.value === false
+                ? { backgroundColor: "aqua", color: "black" }
+                : { backgroundColor: "purple", color: "black" };
+            };
+          }
+          methods: {
+            const changeBackground = () => {
+              isHover = !isHover;
+            };
+          }
+          return {
+            changeBackground,
+          };
+        },
+      });
+
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>

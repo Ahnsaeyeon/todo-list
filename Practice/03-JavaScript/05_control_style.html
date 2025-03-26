@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05_control_style</title>
+  </head>
+  <body>
+    <script>
+      /*
+        forEach
+        - 배열의 각 요소에 주어진 함수를 실행하는 메서드
+        - callback 함수를 전달받는다
+            * 현재 처리 중인 배열의 요소
+            * 횬쟈 처리 중인 요소의 인덱스 (선택)
+            * array (forEac를 호출하는) (선택)
+        - 반환값이 undefinded
+        - break나 continue 사용 불가
+        */
+      let output = "";
+      for (let i = 0; i < 256; i++) {
+        output += "<div></div>";
+      }
+      document.body.innerHTML = output;
+
+      const $divs = document.querySelectorAll("div");
+      $divs.forEach((div, i) => {
+        div.style.height = "2px";
+        div.style.background = `rgb(${i}, ${i}, ${i})`;
+      });
+    </script>
+  </body>
+</html>

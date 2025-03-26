@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여행 사이트</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+      integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="../css/sec2.css
+      " />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/sec1.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="hd">
+        <h1 class="logo">
+          <a href="/"><img src="../img/Logo.png" alt="로고" /></a>
+        </h1>
+        <nav class="gnb">
+          <a href="#">메뉴1</a>
+          <a href="#">메뉴2</a>
+          <a href="#">메뉴3</a>
+          <a href="#">메뉴4</a>
+        </nav>
+        <div class="util">
+          <a href="#">로그인</a>
+          <a href="#">회원가입</a>
+          <a href="#">언어선택</a>
+        </div>
+        <i class="fa-solid fa-bars btn_ham" title="사이트맵 열기"></i>
+      </header>
+
+      <main>
+        <!-- <p>실제 컨텐츠</p>
+        <p class="test1">가상 요소 연습</p> -->
+
+        <section class="sec1">
+          <strong>Best Destinations around the world</strong>
+          <h2>Travel, enjoy and live a new and full life</h2>
+          <p>
+            Built Wicket longer admire do barton vanity itself do in it.
+            Preferred to sportsmen it engrossed listening. Park gate sell they
+            west hard for the.
+          </p>
+          <a href="#" class="btn_more">more</a>
+          <!--가상요소로 넣기-->
+          <a href="#" class="btn_video">video</a>
+        </section>
+
+        <section class="sec2">
+          <div class="swiper slide1">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <div class="card">
+                  <p class="img">
+                    <img src="../img/Rectangle14.jpg" alt="여행지" />
+                  </p>
+                  <p class="place">여행지</p>
+                  <p class="price">가격</p>
+                  <p class="info">정보</p>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card">
+                  <p class="img">
+                    <img src="../img/Rectangle14.jpg" alt="여행지" />
+                  </p>
+                  <p class="place">여행지</p>
+                  <p class="price">가격</p>
+                  <p class="info">정보</p>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card">
+                  <p class="img">
+                    <img src="../img/Rectangle14.jpg" alt="여행지" />
+                  </p>
+                  <p class="place">여행지</p>
+                  <p class="price">가격</p>
+                  <p class="info">정보</p>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card">
+                  <p class="img">
+                    <img src="../img/Rectangle14.jpg" alt="여행지" />
+                  </p>
+                  <p class="place">여행지</p>
+                  <p class="price">가격</p>
+                  <p class="info">정보</p>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card">
+                  <p class="img">
+                    <img src="../img/Rectangle14.jpg" alt="여행지" />
+                  </p>
+                  <p class="place">여행지</p>
+                  <p class="price">가격</p>
+                  <p class="info">정보</p>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card">
+                  <p class="img">
+                    <img src="../img/Rectangle14.jpg" alt="여행지" />
+                  </p>
+                  <p class="place">여행지</p>
+                  <p class="price">가격</p>
+                  <p class="info">정보</p>
+                </div>
+              </li>
+              <li class="swiper-slide">
+                <div class="card">
+                  <p class="img">
+                    <img src="../img/Rectangle14.jpg" alt="여행지" />
+                  </p>
+                  <p class="place">여행지</p>
+                  <p class="price">가격</p>
+                  <p class="info">정보</p>
+                </div>
+              </li>
+            </ul>
+            <div class="swipe pagination pg1"></div>
+            <div class="swiper-button-next next1"></div>
+            <div class="swiper-button-prev prev1"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="foot">하단</footer>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".slide1", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        pagination: {
+          el: ".pg1",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".next1",
+          prevEl: ".prev1",
+        },
+      });
+    </script>
+  </body>
+</html>

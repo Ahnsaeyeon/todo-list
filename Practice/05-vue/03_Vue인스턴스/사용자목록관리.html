@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사용자 목록 관리</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid red;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h3>사용자 목록 관리</h3>
+
+      <input type="text" placeholder="이름 입력" id="name" v-model="name" />
+      <label for="name" v-show="name.length === 0">이름을 입력하세요</label>
+      <br />
+
+      <input
+        type="text"
+        placeholder="전화번호 입력"
+        id="phone"
+        v-model="phone" />
+      <label for="phone" v-show="phone.length === 0"
+        >전화번호를 입력하세요</label
+      >
+      <br />
+
+      <select name="location" id="location" v-model="location">
+        <option value="" disabled selected>지역 선택</option>
+        <option value="서울">서울</option>
+        <option value="경기">경기</option>
+        <option value="부산">부산</option>
+        <option value="제주">제주</option>
+      </select>
+      <label for="location" v-show="location.length === 0"
+        >지역을 선택하세요</label
+      >
+      <br />
+
+      <button @click="addUser">사용자 추가</button>
+      <br /><br />
+
+      <select name="location2" id="location2" v-model="location2">
+        <option value="">모든 지역</option>
+        <option value="서울">서울</option>
+        <option value="경기">경기</option>
+        <option value="부산">부산</option>
+        <option value="제주">제주</option>
+      </select>
+
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>지역</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="item in filteredUsers"
+            :key="item.id"
+            v-show="location2 === '' || item.location === location2">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.location}}</td>
+            <td><button @click="deleteUser(item.id)">삭제</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript">
+      const { createApp, ref, computed } = Vue;
+
+      const app = createApp({
+        setup() {
+          const users = ref([
+            { id: 1, name: "짱구", phone: "010-1111-2222", location: "서울" },
+            { id: 2, name: "철수", phone: "010-3333-4444", location: "경기" },
+            { id: 3, name: "유리", phone: "010-5555-6666", location: "부산" },
+          ]);
+
+          const name = ref("");
+          const phone = ref("");
+          const location = ref("");
+          const location2 = ref("");
+
+          const addUser = () => {
+            if (!name.value.trim() || !phone.value.trim() || !location.value) {
+              alert("모든 필드를 입력하세요.");
+              return;
+            }
+            const newUser = {
+              id:
+                users.value.length > 0
+                  ? Math.max(...users.value.map((u) => u.id)) + 1
+                  : 1,
+              name: name.value,
+              phone: phone.value,
+              location: location.value,
+            };
+
+            users.value.push(newUser);
+            name.value = "";
+            phone.value = "";
+            location.value = "";
+          };
+
+          const deleteUser = (id) => {
+            users.value = users.value.filter((user) => user.id !== id);
+          };
+
+          const filteredUsers = computed(() => {
+            return location2.value
+              ? users.value.filter((user) => user.location === location2.value)
+              : users.value;
+          });
+          return {
+            users,
+            name,
+            phone,
+            location,
+            location2,
+            addUser,
+            deleteUser,
+            filteredUsers,
+          };
+        },
+      });
+
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>

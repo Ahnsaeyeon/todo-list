@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fileName</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>v-html</h1>
+      <p v-html="article"></p>
+      <!-- svc 코드를 중간에 삽입해야 할 때, html 코드를 삽입할 때-->
+      <p v-html="svgIcon"></p>
+      <!-- icon을 동적으로 관리할 수 있음 -->
+      <!-- v-html은 xss 공격에 취약함, 보안에 중요한 요소는 v-text를 사용 -->
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript">
+      const { createApp } = Vue;
+
+      let vm = createApp({
+        name: "App",
+        data() {
+          return {
+            message: "",
+            article: "<h2><b>중제목</b>입니다.</h2>",
+            svgIcon:
+              '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-12h4v8h-4z"/></svg>',
+          };
+        },
+      });
+      vm.mount("#app");
+    </script>
+  </body>
+</html>

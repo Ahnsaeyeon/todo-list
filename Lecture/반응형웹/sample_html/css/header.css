@@ -1,0 +1,69 @@
+#app .hd {
+  border: 1px solid red;
+}
+
+.hd img {
+  width: 100%;
+}
+
+.hd > *,
+.gnb > * {
+  border: 1px solid lightblue;
+}
+
+.hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hd .logo {
+  width: 200px;
+}
+
+.hd .gnb,
+.hd .util {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hd .gnb a {
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+}
+
+.hd .gnb a:hover {
+  background-color: aliceblue;
+}
+
+.hd .util a {
+  /* border: 1px solid var(--mcolor1); */
+  border: 1px solid transparent;
+  padding: 0.5rem;
+  transition: 0.3s;
+}
+
+.hd .util a:hover {
+  border-color: lightgray;
+}
+
+.btn_ham {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #app .hd .gnb,
+  .hd .util {
+    display: none;
+  }
+
+  .btn_ham {
+    display: block;
+    cursor: pointer;
+  }
+}

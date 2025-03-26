@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14_object_this</title>
+    <script>
+      /* this
+              - 겍체 자신을 참조하는 키워드
+              - 객체 내부에서 객체 자가자신을 참조할 때 사용
+              */
+      let person = {
+        name: "유인성",
+        eat: function (food) {
+          alert(`${this.name}이 ${food}을/를 먹습니다.`);
+        },
+      };
+
+      person.eat("밥");
+    </script>
+  </head>
+  <body>
+    <h1>14_object_this</h1>
+  </body>
+</html>

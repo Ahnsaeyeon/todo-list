@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_select_id</title>
+    <script>
+      /* querySeletor()
+        주어진 CSS 선택자에 일치하는 가장 첫 번째 요소를 선택하는 메서드 */
+      window.onload = function () {
+        const $id = document.querySelector("h1");
+        // const $id = document.getElementById("header");
+        $id.style.color = "orange";
+        $id.style.background = "red";
+        $id.innerHTML = "From JavaScript";
+      };
+    </script>
+  </head>
+  <body>
+    <h1>header</h1>
+    <h1>header</h1>
+    <h1>header</h1>
+  </body>
+</html>
