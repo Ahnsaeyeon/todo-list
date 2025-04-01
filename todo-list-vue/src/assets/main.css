@@ -1,0 +1,32 @@
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+:root {
+  font-family: "NanumHuman";
+
+  color: rgb(73, 73, 73);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 80%;
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: #fffdfb;
+  -webkit-box-shadow: 9px 11px 5px 0px rgba(125, 124, 125, 0.4);
+  -moz-box-shadow: 9px 11px 5px 0px rgba(125, 124, 125, 0.4);
+  box-shadow: 9px 11px 5px 0px rgba(125, 124, 125, 0.4);
+  border-radius: 10px;
+}
+
+body {
+  background-color: #ecebe4;
+  height: 100vh;
+}
